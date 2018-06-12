@@ -1,0 +1,11 @@
+#include <time.h>
+
+    clock_t start,end;
+    double elapsed_time;
+
+    start = clock();
+    end = clock();
+    
+    elapsed_time = (end-start)/(double)CLOCKS_PER_SEC;
+    printf("Elapsed Time = %lf\n",elapsed_time);
+    
