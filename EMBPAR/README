@@ -1,0 +1,48 @@
+The following examples of MPI code can be used
+for typical embarassingly parallel situations
+
+TRAPRULE - Trapezoidal Rule implemented in MPI with a single dimension.
+Note that a very large N is required to get speedup for a 1-D simple
+function integration--this is typically better left serial, but it
+can be still used as an example, particularly of how many
+operations are required in the loop before parallelization pays off.
+
+MONTECARLO - while 1-D function integration typically requires an
+unrealistically large N for the problem to be scalable, this is not true
+for triple or higher dimensional integrals. Additionally, if
+D is 3 or higher, Monte Carlo integration is as or more efficient
+than traditional use of trapezoidal rules or other finite
+difference techniques. This program implements a Monte Carlo
+solution of a triple integral.
+
+ROUNDROBIN - Typical first example of how to parallelize a loop in
+MPI. Round robin scheduling reduces memory locality for simple
+array operations, but increases load balancing for more complicated
+loops.
+
+RRBUFFER - While round robin scheduling schemes can sometimes
+make for easy load balancing, they tend to produce either strided
+or partial arrays that have to be gathered back at the head node.
+This example shows the use of a buffer for storage of loop results
+which is then copied to the appropriate place in the larger
+array on the head node.
+
+RR2D - Example of using a single loop structure in place of
+a nested loop with round robin scheduling. Note that if the outer
+loop is small in nested loops, this limits scalability as typically
+only the outer loop in a set of nested loops is parallelized.
+Collapsing into a single loop reducesd this problem.
+
+RR2DVIS - Example of pairing a 2D loop with libgd for creation
+of images.
+
+DPEND - Use of a 2D loop with libgd visualization applied to the
+solution set of a double pendulum, which produces a fractal image.
+Solution spaces of nonlinear systems can make for projects that
+have both significant computational requirements (and thus
+can exploit parallelism) and highly graphic results.
+
+RANDWALK1D - Example of a random walk, with N walkers taking S random
+steps, each of which may move to the left, right, or stand still
+with equal probability. The N walkers are spread over the processes
+and combined on the head node using a call to MPI_Reduce.
