@@ -6,3 +6,5 @@ The WAVE_COMP module has examples of solving the wave equation in 1-D through a 
 The OPTIMIZATION module has code examples designed to show impact of some key principles in loop optimization.
 
 The MANDY directory has starter code to solve for the Mandelbrot set and save as an image using GD. Starter code and one solution for a parallelization of the loop using OpenMP are included. The goal of this module is to give students an example of a calculation to parallelize, with a discussion of scheduling and load balancing.
+
+The NBODY directory has starter code as a parallelization challenge with a simple direct force n-body calculation. A README file also covers compiling with options for gprof to look at profiling for the code.
