@@ -13,3 +13,7 @@ The GETOPT module is an example of using getopt for command line parsing. While 
 
 The COLLECTIVE module shows code examples of some of the most commonly used collective communication calls in MPI
 
+The EMBPAR module has some examples of simple embarassingly parallel code.
+
+The DEADLOCK module has a code that can be configured to explore whether deadlock will or will not occur in a send recieve pair, with variable message size, send/recieve order, and logic.
+
