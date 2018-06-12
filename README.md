@@ -19,3 +19,7 @@ The DEADLOCK module has a code that can be configured to explore whether deadloc
 
 The FIRE_DOM_DEC module is a domain decomposition parallelization of a fire mode with visualziation in X
 
+The TRAVELING_SALES module is an example of a simulated annealing solution of the traveling salesman problem in parallel, with visualization in X
+
+The LIFE_CARTESIAN module shows a domain decomposition of Game of Life using the cartesian based collective communications commands in MPI.
+
