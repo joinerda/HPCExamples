@@ -17,3 +17,5 @@ The EMBPAR module has some examples of simple embarassingly parallel code.
 
 The DEADLOCK module has a code that can be configured to explore whether deadlock will or will not occur in a send recieve pair, with variable message size, send/recieve order, and logic.
 
+The FIRE_DOM_DEC module is a domain decomposition parallelization of a fire mode with visualziation in X
+
