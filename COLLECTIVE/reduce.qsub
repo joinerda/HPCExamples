@@ -1,0 +1,15 @@
+#PBS -N mpi_reduce
+#PBS -q route
+#PBS -l nodes=20:ppn=8
+#PBS -l walltime=1:00:00        
+##PBS -m bea
+# -- change below to your email address for notification
+#PBS -M discard@puma.kean.edu
+PROGRAM='./reduce'
+cd $PBS_O_WORKDIR
+# run the program
+cat $PBS_NODEFILE
+N_NODES=`cat $PBS_NODEFILE | wc -l`
+module load mpich2_intel
+time mpirun -np $N_NODES -machinefile $PBS_NODEFILE $PROGRAM
+exit 0

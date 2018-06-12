@@ -1,0 +1,21 @@
+Files are designed as examples of how to implement the
+most common collective communications in MPI.
+
+MPI_Bcast broadcasts information out to all processes from one.
+
+Reduce reduces a variable with an operation (sum, max, logical and,
+  etc.) across processes.
+
+Scatter splits a large array into chunks on individual processes.
+
+Gather collects chunks on individual processes onto a single
+   large array on one process.
+
+"Cheesy_reduce" is an alternative to gathering which uses Reduce
+   on a sparesly populated array. Not as efficient as a proper
+   scatter/gather, but easy to implement.
+
+scattergatherv shows the use of scatterv and gatherv to
+   implement scatter and gather on chunks that don't
+   evenly split across the number of processes.
+
